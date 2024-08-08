@@ -3,11 +3,13 @@ package com.fjco.Test02JAVAEEFJCO.Modelo;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
+@Entity
+@Table(name = "DetalleOrden")
 public class DetalleOrdenFJCO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "orden_id")
@@ -23,11 +25,11 @@ public class DetalleOrdenFJCO {
     @NotBlank(message = "El precio es requerido")
     private double precioFJCO;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

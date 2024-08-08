@@ -5,21 +5,23 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "Producto")
 public class ProductoFJCO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     private String nombreFJCO;
 
     @OneToMany(mappedBy = "productoFJCO")
     private Set<DetalleOrdenFJCO> detalles = new HashSet<>();
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
