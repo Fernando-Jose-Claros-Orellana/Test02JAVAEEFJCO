@@ -1,4 +1,7 @@
 package com.fjco.Test02JAVAEEFJCO.Repositorio;
 
-public interface IDetalleOrdenRepository {
+import com.fjco.Test02JAVAEEFJCO.Modelo.DetalleOrdenFJCO;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IDetalleOrdenRepository extends JpaRepository<DetalleOrdenFJCO, Integer> {
 }
