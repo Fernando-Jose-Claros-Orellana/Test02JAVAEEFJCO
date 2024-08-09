@@ -4,18 +4,18 @@
       layout:decorate="/Layout/_mainLayout">
 
 <div layout:fragment="content">
-    <h1>Crear nuevo Producto</h1>
-    <form th:action="@{/Producto/save}" th:object="${productoFJCO}" method="post">
+    <h1>Crear nueva Orden</h1>
+    <form th:action="@{/Orden/save}" th:object="${ordenFJCO}" method="post">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" th:field="*{nombreFJCO}" id="nombre" placeholder="Escriba el nombre del producto" required>
+                    <label for="fecha">Fecha</label>
+                    <input type="date" class="form-control" th:field="*{fecha}" id="fecha" placeholder="Escriba la fecha" required>
                 </div>
             </div>
         </div>
         <hr>
         <button type="submit" class="btn btn-outline-primary">Guardar</button> |
-        <a th:href="@{/Producto}" class="btn btn-outline-secondary">Regresar</a>
+        <a th:href="@{/Orden}" class="btn btn-outline-secondary">Regresar</a>
     </form>
 </div>

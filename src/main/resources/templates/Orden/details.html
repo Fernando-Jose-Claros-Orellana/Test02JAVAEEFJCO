@@ -5,17 +5,17 @@
       layout:decorate="/Layout/_mainLayout">
 
 <div layout:fragment="content">
-    <h1>Detalles del Producto</h1>
-    <form th:object="${producto}">
+    <h1>Detalles dela Orden</h1>
+    <form th:object="${orden}">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" th:field="*{nombreFJCO}" id="nombre" readonly>
+                    <label for="fecha">Fecha</label>
+                    <input type="date" class="form-control" th:field="*{fecha}" id="fecha" readonly>
                 </div>
             </div>
         </div>
             <hr>
-            <a th:href="@{/Producto}" class="btn btn-outline-primary">Regresar</a>
+            <a th:href="@{/Orden}" class="btn btn-outline-primary">Regresar</a>
     </form>
 </div>

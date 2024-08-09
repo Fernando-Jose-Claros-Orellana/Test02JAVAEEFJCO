@@ -1,6 +1,8 @@
 package com.fjco.Test02JAVAEEFJCO.Modelo;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -14,6 +16,8 @@ public class OrdenFJCO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotNull(message = "La fecha de vencimiento es requerida")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate fecha;
 
     @OneToMany(mappedBy = "ordenFJCO")
@@ -27,11 +31,11 @@ public class OrdenFJCO {
         this.id = id;
     }
 
-    public LocalDate getFecha() {
+    public @NotNull(message = "La fecha de vencimiento es requerida") LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(@NotNull(message = "La fecha de vencimiento es requerida") LocalDate fecha) {
         this.fecha = fecha;
     }
 

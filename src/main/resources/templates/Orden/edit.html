@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/Layout/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Editar Orden</h1>
+    <form th:action="@{/Orden/save}" th:object="${orden}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" class="form-control" th:field="*{fecha}" id="fecha" placeholder="Escriba la fecha" required>
+                </div>
+            </div>
+        </div>
+            <hr>
+            <button type="submit" class="btn btn-outline-primary">Actualizar</button> |
+            <a th:href="@{/Orden}" class="btn btn-outline-secondary">Regresar</a>
+    </form>
+</div>
