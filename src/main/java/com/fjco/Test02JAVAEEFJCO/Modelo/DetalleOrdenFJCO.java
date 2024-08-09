@@ -19,10 +19,9 @@ public class DetalleOrdenFJCO {
     @JoinColumn(name = "producto_id")
     private ProductoFJCO productoFJCO;
 
-    @NotBlank(message = "La cantidad es requerida")
     private int cantidadFJCO;
 
-    @NotBlank(message = "El precio es requerido")
+
     private double precioFJCO;
 
     public int getId() {
@@ -49,21 +48,19 @@ public class DetalleOrdenFJCO {
         this.productoFJCO = productoFJCO;
     }
 
-    @NotBlank(message = "La cantidad es requerida")
     public int getCantidadFJCO() {
         return cantidadFJCO;
     }
 
-    public void setCantidadFJCO(@NotBlank(message = "La cantidad es requerida") int cantidadFJCO) {
+    public void setCantidadFJCO(int cantidadFJCO) {
         this.cantidadFJCO = cantidadFJCO;
     }
 
-    @NotBlank(message = "El precio es requerido")
     public double getPrecioFJCO() {
         return precioFJCO;
     }
 
-    public void setPrecioFJCO(@NotBlank(message = "El precio es requerido") double precioFJCO) {
+    public void setPrecioFJCO(double precioFJCO) {
         this.precioFJCO = precioFJCO;
     }
 }
